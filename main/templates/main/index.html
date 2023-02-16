@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Страница с товарами </title>
+</head>
+<body>
+{% block content %}
+<p>Товары</p>
+<ul>
+    {% for item in name %}
+    <li>
+        <a href = "{% url 'main:item' item.id %}">
+        <p>{{ item.name }}</p>
+        </a>
+        <p>{{ item.description }}</p>
+        <p>{{ item.price }}</p>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock content %}
+</body>
+</html>
